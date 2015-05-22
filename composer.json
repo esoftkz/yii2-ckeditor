@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "esoftkz\\ckeditor\\": "src"
+            "esoftkz\\ckeditor\\": ""
         }
     },
     "extra": {
