@@ -469,11 +469,15 @@
 							},
 							
 							init: {
-								FileUploaded: function(up, file, response){
-									console.log('ответ загрузки');		
+								FileUploaded: function(up, file, response){				
+									var JsonResponse = JSON.parse(response.response);																											
+									var imageElement = editor.document.createElement( 'img' );									
+									imageElement.setAttribute( 'alt', '' );
+									imageElement.setAttribute( 'src', JsonResponse.url);
+									editor.insertElement( imageElement );									
 								},
-								UploadComplete: function(up, file) {
-									console.log('Скрипт завершен');									
+								UploadComplete: function(up, file) {									
+									CKEDITOR.dialog.getCurrent().hide();	
 								}
 							},
 							// Sort files
